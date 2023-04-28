@@ -14,10 +14,10 @@ public class ShopRepositoryTest {
         repo.add(product1);
         repo.add(product2);
         repo.add(product3);
-        repo.remove(2);
+        repo.remove(1);
 
         Product[] expected = new Product[]{
-                product1,
+                product2,
                 product3
         };
 
@@ -33,9 +33,8 @@ public class ShopRepositoryTest {
         repo.add(product1);
         repo.add(product2);
         repo.add(product3);
-        Assertions.assertThrows(NotFoundException.class, () -> {
-            repo.remove(4);
-        });
+
+        Assertions.assertThrows(NotFoundException.class, () -> repo.remove(4));
     }
 
 }
